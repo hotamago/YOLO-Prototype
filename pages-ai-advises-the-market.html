@@ -260,23 +260,23 @@
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link" href="pages-ai-advises-the-market.html">
+        <a class="nav-link collapsed" href="pages-ai-advises-the-market.html">
           <i class="bi bi-layout-text-window-reverse"></i>
-          <span>AI tư vấn</span>
+          <span>AI tự động quảng cáo</span>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-ai-price-prediction.html">
           <i class="bi bi-bar-chart"></i>
-          <span>Dự đoán giá thị trường</span>
+          <span>AI marketing social network</span>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-ai-disease-prediction.html">
           <i class="bi bi-menu-button-wide"></i>
-          <span>Dự đoán dịch bệnh</span>
+          <span>AI dự đoán xu hướng</span>
         </a>
       </li>
 
@@ -317,12 +317,12 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>AI advises the market</h1>
+      <h1>AI automatically advertises</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item">AI</li>
-          <li class="breadcrumb-item active">AI advises the market</li>
+          <li class="breadcrumb-item active">AI automatically advertises</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -333,7 +333,7 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Chọn tên sản phẩm nông nghiệp</h5>
+              <h5 class="card-title">Chọn chiến dịch quảng cáo</h5>
 
               <form>
                 <div class="row mb-3">
@@ -356,50 +356,9 @@
     </section>
 
     <div v-show="nameProduct != 0">
-      <section class="section">
-        <div class="row">
-          <div class="col-lg">
-
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title"><i class="bi bi-patch-check"></i> Lời khuyên được đánh giá cao nhất</h5>
-                <p>{{ BestWhatToDo }}</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
 
       <section class="section">
         <div class="row">
-
-          <div class="col-lg-12">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Top 10 lời khuyên khác</h5>
-
-                <!-- Bar Chart -->
-                <div id="barChart"></div>
-                <!-- End Bar Chart -->
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-12">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Giá dự đoán trong tương lai</h5>
-
-                <!-- Area Chart -->
-                <div id="PriceChart"></div>
-                <!-- End Area Chart -->
-
-              </div>
-            </div>
-          </div>
-
           <div class="col-lg-6" v-for="(ele, index) in chart.diseases">
             <div class="card">
               <div class="card-body">
@@ -412,8 +371,110 @@
               </div>
             </div>
           </div>
-
+        </div>
       </section>
+
+      <section class="section dashboard">
+        <div class="row">
+
+          <div class="col-xxl-4 col-md-4">
+            <div class="card info-card revenue-card">
+
+              <div class="card-body">
+                <h5 class="card-title">Data used <span>| 15 days</span></h5>
+
+                <div class="d-flex align-items-center">
+                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="bi bi-hdd-fill"></i>
+                  </div>
+                  <div class="ps-3">
+                    <h6>{{ bigData }} GB</h6>
+                    <span class="text-success small pt-1 fw-bold">{{ pesentData }}%</span> <span
+                      class="text-muted small pt-2 ps-1">total Data</span>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-xxl-4 col-md-4">
+            <div class="card info-card sales-card">
+
+              <div class="card-body">
+                <h5 class="card-title">Total time training <span>| 15 days data </span></h5>
+
+                <div class="d-flex align-items-center">
+                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="bi bi-stopwatch-fill"></i>
+                  </div>
+                  <div class="ps-3">
+                    <h6>{{ timeTraining }} Hour{{ (timeTraining > 1 ? 's' : '') }}</h6>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-xxl-4 col-md-4">
+            <div class="card info-card customers-card">
+
+              <div class="card-body">
+                <h5 class="card-title">LOSS <span>| 15 days </span></h5>
+
+                <div class="d-flex align-items-center">
+                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="bi bi-stopwatch-fill"></i>
+                  </div>
+                  <div class="ps-3">
+                    <h6>{{ LossValue }} %</h6>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="section dashboard">
+        <div class="row">
+
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Tổng quan training</h5>
+
+                <!-- Area Chart -->
+                <div id="trainingOverview"></div>
+                <!-- End Area Chart -->
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Nguồn data</h5>
+
+                <!-- Area Chart -->
+                <div id="sourceData"></div>
+                <!-- End Area Chart -->
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    
+    </div>
 
   </main><!-- End #main -->
 
@@ -439,88 +500,50 @@
       el: '#main',
       data: {
         nameProduct: 0,
+        bigData: 0,
+        pesentData: 0,
+        timeTraining: 0,
+        LossValue: 0,
         listData: [
-          { name: 'Dưa hấu', price: { min: 8000, max: 10000 } },
-          { name: 'Gạo', price: { min: 400, max: 10000 } },
-          { name: 'Ngô', price: { min: 400, max: 800 } },
-          { name: 'Sắn', price: { min: 100000, max: 500000 } },
-          { name: 'Nho', price: { min: 4000, max: 7000 } },
-          { name: 'Nhãn', price: { min: 50000, max: 80000 } },
-          { name: 'Đào', price: { min: 400, max: 500 } },
-          { name: 'Gà', price: { min: 30000, max: 300000 } },
-          { name: 'Lợn', price: { min: 400, max: 10000 } }
-        ],
-        BestWhatToDo: "",
-        whatToDo: [
-          "Tích trữ",
-          "Mua thêm trong nước",
-          "Nhập khẩu",
-          "Cắt lỗ",
-          "Chuyển vốn sang sản phẩm khác từ từ",
-          "Nhập khẩu hàng nước ngoài",
-          "Kiên định chờ thời cơ",
-          "Đầu tư nhiều vào marketing",
-          "Đẩy mạnh quá trình bán",
-          "Bán từ từ",
-          "Tập trung vốn",
-          "Rải rác vốn",
-          "Đầu tư vào sản phẩm khác",
-          "Bán gấp rút",
-          "Mở rộng thương trường",
-          "Kêu gọi đầu tư",
-          "Phát triển ổn định nắm giữ thị trường",
-          "Đầu từ thêm các sản phẩm liên quan đến nông sản hiện tại"
+          { name: 'YOLO', price: { min: 8000, max: 10000 } },
+          { name: 'MetaBit', price: { min: 400, max: 10000 } },
+          { name: 'HotaVN', price: { min: 400, max: 800 } },
+          { name: 'Education', price: { min: 100000, max: 500000 } },
+          { name: 'HotSkill', price: { min: 4000, max: 7000 } },
+          { name: 'AI marketing', price: { min: 50000, max: 80000 } },
+          { name: 'OSU', price: { min: 400, max: 500 } },
+          { name: 'HIEC', price: { min: 30000, max: 300000 } },
+          { name: 'CLB HUST', price: { min: 400, max: 10000 } }
         ],
         chart: {
-          whatToDo: {
-            values: [],
-            labels: []
-          },
-          price: {
+          diseases: [],
+          sourceData: {
+            name: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
             values: []
           },
-          diseases: []
+          trainingOverview: {
+            name: ['CPU', 'GPU', 'RAM', 'MAGIC', 'KwH', 'HUMAN', 'SOURCE'],
+            values: []
+          }
         }
       },
       methods: {
         CreateNewGeneration: function () {
           {
-            var dataRandom = [];
-            var dataRandomName = [], dataRandomValue = [];
-            var elG = this.whatToDo;
-            for (var i = 0; i < elG.length; i++) {
-              dataRandom.push({ name: elG[i], value: getRndInteger(0, 100) });
-            }
-            dataRandom.sort(function (a, b) { return b.value - a.value; });
-            var llk = Math.min(10, elG.length);
-            for (var i = 0; i < llk; i++) dataRandomName.push(dataRandom[i].name)
-            for (var i = 0; i < llk; i++) dataRandomValue.push(dataRandom[i].value)
-            var BestWhatToDo = "";
-            for (var i = 0; i < llk; i++) {
-              if (dataRandomValue[i] >= 80 || i == 0) BestWhatToDo += dataRandomName[i] + (i < llk - 1 && dataRandomValue[i + 1] >= 80 ? ", " : ".");
-              else break;
-            }
-            this.chart.whatToDo.values = dataRandomValue;
-            this.chart.whatToDo.name = dataRandomName;
-            this.BestWhatToDo = BestWhatToDo;
-          }
-          {
-            var dataRandom = [];
-            var elG;
-            dataRandom = [];
-            elG = this.listData[this.nameProduct - 1];
-            for (var i = 1; i <= 20; i++) dataRandom.push(getRndInteger(elG.price.min, elG.price.max));
-            this.chart.price.values = dataRandom;
+            this.bigData = getRndInteger(234, 693254);
+            this.pesentData = getRndInteger(1, 90);
+            this.timeTraining = getRndInteger(1, 100);
+            this.LossValue = getRndFoat(2, 5);
           }
           {
             var numDisease = getRndInteger(1, 6);
             var nameDisease = [
-              ["Thối rễ", "Thối gốc", "Héo vi khuẩn", "Cháy lá", "Thối thân"], 
-              ["Sâu đục quả", "Sâu cuốn lá", "Bọ dưa", "Bọ xít", "Sâu đất"]
+              ["A", "B", "C", "D", "E"], 
+              ["F", "G", "H", "J", "K"]
             ];
-            var nameList = ["Dự đoán dịch bệnh: ", "Dự đoán sâu bệnh: "];
-            var snameList = ["tỷ lệ bệnh (%)", "mật độ sâu (c/m2)"];
-            var minmaxList = [{ min: 0, max: 100 }, { min: 0, max: 1000 }];
+            var nameList = ["Trends keywords google: ", "Trends keywords facebook: "];
+            var snameList = ["Views (24h)", "Views (24h)"];
+            var minmaxList = [{ min: 10000, max: 100000 }, { min: 10000, max: 100000 }];
             var diseases = [];
             for (var i = 0; i < numDisease; i++) {
               var TypeDisease = getRndInteger(0, 1);
@@ -531,104 +554,23 @@
             }
             this.chart.diseases = diseases;
           }
+          {
+            var dataRandom = [];
+            for (var i = 1; i <= 8; i++) dataRandom.push(getRndInteger(4000, 100000));
+            this.chart.sourceData.values = dataRandom;
+          }
+          {
+            var dataRandom = [];
+            for (var i = 1; i <= 7; i++) dataRandom.push(getRndInteger(1000, 50000));
+            this.chart.trainingOverview.values = dataRandom;
+          }
         }
       },
       updated: function () {
         this.$nextTick(function () {
-          document.querySelector("#barChart").innerHTML = "";
           document.querySelector("#PriceChart").innerHTML = "";
-        });
-        this.$nextTick(function () {
-          var elG = this.chart.whatToDo;
-          new ApexCharts(document.querySelector("#barChart"), {
-            series: [{
-              name: "Mức chính xác %",
-              data: elG.values
-            }],
-            max: 100,
-            min: 100,
-            chart: {
-              type: 'bar',
-              height: 350
-            },
-            yaxis: {
-              min: (min) => {
-                return min;
-              },
-              max: (max) => {
-                return max;
-              }
-            },
-            plotOptions: {
-              bar: {
-                borderRadius: 4,
-                horizontal: true,
-              }
-            },
-            dataLabels: {
-              enabled: false
-            },
-            xaxis: {
-              categories: elG.name,
-            }
-          }).render();
-        });
-        this.$nextTick(function () {
-          var elG = this.chart.price;
-          new ApexCharts(document.querySelector("#PriceChart"), {
-            series: [{
-              name: "vnđ",
-              data: elG.values
-            }],
-            chart: {
-              type: 'area',
-              height: 350,
-              zoom: {
-                enabled: false
-              }
-            },
-            dataLabels: {
-              enabled: false
-            },
-            stroke: {
-              curve: 'smooth'
-            },
-            subtitle: {
-              text: 'Price Movements',
-              align: 'left'
-            },
-            labels: [
-              "13 Nov 2022",
-              "14 Nov 2022",
-              "15 Nov 2022",
-              "16 Nov 2022",
-              "17 Nov 2022",
-              "20 Nov 2022",
-              "21 Nov 2022",
-              "22 Nov 2022",
-              "23 Nov 2022",
-              "24 Nov 2022",
-              "27 Nov 2022",
-              "28 Nov 2022",
-              "29 Nov 2022",
-              "30 Nov 2022",
-              "01 Dec 2022",
-              "04 Dec 2022",
-              "05 Dec 2022",
-              "06 Dec 2022",
-              "07 Dec 2022",
-              "08 Dec 2022"
-            ],
-            xaxis: {
-              type: 'datetime',
-            },
-            yaxis: {
-              opposite: true
-            },
-            legend: {
-              horizontalAlign: 'left'
-            }
-          }).render();
+          document.querySelector("#sourceData").innerHTML = "";
+          document.querySelector("#trainingOverview").innerHTML = "";
         });
         this.$nextTick(function () {
           var elG = this.chart.diseases;
@@ -688,6 +630,36 @@
               }
             }).render();
           }
+        });
+        this.$nextTick(function () {
+          var elG = this.chart.sourceData;
+          new ApexCharts(document.querySelector("#sourceData"), {
+            series: elG.values,
+            chart: {
+              height: 350,
+              type: 'donut',
+              toolbar: {
+                show: true
+              }
+            },
+            labels: elG.name,
+          }).render();
+        });
+        this.$nextTick(function () {
+          var elG = this.chart.trainingOverview;
+          new ApexCharts(document.querySelector("#trainingOverview"), {
+            series: [{
+              name: 'unit',
+              data: elG.values,
+            }],
+            chart: {
+              height: 350,
+              type: 'radar',
+            },
+            xaxis: {
+              categories: elG.name
+            }
+          }).render();
         });
       },
     });
